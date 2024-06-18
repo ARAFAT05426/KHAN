@@ -1,7 +1,11 @@
-import { Inter } from "next/font/google";
+import { Source_Code_Pro } from "next/font/google";
 import "./globals.css";
+import ParticlesComponent from "./Components/ParticlesComponent/ParticlesComponent";
+import Navbar from "./Components/Navbar/Navbar";
+import Pagetransition from "./Components/Pagetransition/Pagetransition";
+import StairTransition from "./Components/StairTransition/StairTransition";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Source_Code_Pro({ subsets: ["vietnamese"] ,weight:["900", "800", "700", "600", "500", "200"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +15,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+        <Pagetransition>{children}</Pagetransition>
+        <ParticlesComponent />
+        <StairTransition />
+      </body>
     </html>
   );
 }
