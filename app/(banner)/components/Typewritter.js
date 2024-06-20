@@ -68,7 +68,7 @@ const Typewritter = ({ texts, loop = true }) => {
           variants={textVariants}
           className="text-3xl tablet:text-4xl laptop:text-5xl desktop:text-6xl text-center laptop:text-start font-bold"
         >
-          <span className="text-white">a</span> {displayedText}
+          <span className="text-gray-200">a</span> {displayedText}
         </motion.span>
         <span className="inline-block w-1 tablet:w-[5px] h-8 tablet:h-10 laptop:h-14 desktop:h-16 bg-[#12B76A] animate-blink rounded-[1.5px] ml-1 -mb-2 tablet:-mb-3" />
       </div>

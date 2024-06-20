@@ -12,7 +12,7 @@ const Intro = () => {
       >
         Hello there!
       </span>
-      <h1 className="text-3xl tablet:text-4xl laptop:text-5xl desktop:text-6xl text-white text-center font-bold laptop:text-left mt-2 text-nowrap">
+      <h1 className="text-3xl tablet:text-4xl laptop:text-5xl desktop:text-6xl text-gray-200 text-center font-bold laptop:text-left mt-2 text-nowrap">
         I am Arafat Khan
         <br />
         <Typewritter
@@ -20,7 +20,7 @@ const Intro = () => {
           loop={true}
         />
       </h1>
-      <p className="text-xs tablet:text-sm desktop:text-base text-center laptop:text-left font-light tablet:font-medium text-white mt-4 max-w-2xl mobile:max-w-3xl tablet:max-w-4xl laptop:max-w-4xl">
+      <p className="text-xs tablet:text-sm desktop:text-base text-center laptop:text-left font-light tablet:font-medium text-gray-400 mt-4 max-w-2xl mobile:max-w-3xl tablet:max-w-4xl laptop:max-w-4xl">
         Passionate about building dynamic and responsive web applications using
         the latest technologies. Experienced in MongoDB, Express.js, React, and
         Node.js.

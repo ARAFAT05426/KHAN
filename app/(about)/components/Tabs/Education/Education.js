@@ -1,14 +1,14 @@
 import { Roboto_Mono } from "next/font/google";
-import { education } from "./EducationArray";
+import { education } from "./EducationList";
 const roboto = Roboto_Mono({ subsets: ["cyrillic-ext"], weight: ["700"] });
 
 const Education = () => {
   return (
-    <div className="w-full grid grid-cols-1 tablet:grid-cols-2 gap-5 h-96 overflow-y-auto py-5 px-2">
+    <div className="w-full grid grid-cols-1 tablet:grid-cols-2 gap-3 h-96 overflow-y-auto py-5">
       {education?.map((item, i) => (
         <div
           key={i}
-          className="bg-card/50 p-5 flex flex-col items-center tablet:items-start rounded-lg shadow-md transform transition duration-300 hover:scale-[1.03] hover:shadow-lg"
+          className="bg-card/50 p-5 flex flex-col gap-y-1 items-center tablet:items-start rounded-lg z-[5]"
         >
           <p className="text-primary mt-2">
             {item.duration.from} - {item.duration.to}

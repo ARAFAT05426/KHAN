@@ -1,12 +1,10 @@
-import Heading from "@/app/Components/Heading/Heading";
-import Tabs from "../components/TabContainer/TabContainer";
 import Intro from "../Intro";
+import Tabs from "../components/TabContainer/TabContainer";
 
 const Page = () => {
   return (
-    <section className="container mx-auto flex flex-col p-4">
-      <Heading bgtext="ABOUT" text="KHAN" />
-      <div className="flex flex-col gap-12 laptop:flex-row items-center laptop:items-start mt-10">
+    <section className="container mx-auto p-4">
+      <div className="flex flex-col gap-12 laptop:flex-row items-center laptop:items-start mt-8 tablet:mt-14 laptop:mt-48">
         <div className="flex-1 w-full">
           <Intro />
         </div>

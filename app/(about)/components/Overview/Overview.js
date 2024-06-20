@@ -26,7 +26,7 @@ const Overview = () => {
       {overview.map((item, index) => (
         <div key={index} className="flex flex-col text-center laptop:items-start px-[2px] py-3 relative">
           <div
-            className={`${roboto.className} text-primary text-2xl tablet:text-3xl laptop:text-4xl font-bold mb-2 text-center`}
+            className={`${roboto.className} text-primary text-2xl tablet:text-3xl laptop:text-4xl font-bold mb-2 text-center bg-clip-text`}
             style={{
               WebkitTextStroke: "1px #14cf93",
               WebkitTextFillColor: "transparent",
@@ -34,7 +34,7 @@ const Overview = () => {
           >
             {item.count}
           </div>
-          <div className={`${item?.title?.length < 15 ? "max-w-[100px]" : "max-w-[150px]"} text-gray-700 text-center laptop:text-left text-sm tablet:text-base laptop:text-lg font-semibold`}>
+          <div className={`${item?.title?.length < 15 ? "max-w-[100px]" : "max-w-[150px]"} text-gray-400/75 text-center laptop:text-left text-sm tablet:text-base laptop:text-lg font-semibold`}>
             {item.title}
           </div>
           {/* Add a vertical divider except for the last item in the row */}
