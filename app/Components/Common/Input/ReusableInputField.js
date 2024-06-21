@@ -19,7 +19,7 @@ const ReusableInputField = ({ name }) => {
   };
 
   return (
-    <div className="w-full flex justify-center my-6">
+    <div className="w-full flex justify-center my-6 z-10">
       <motion.div
         className="relative"
         initial="initial"

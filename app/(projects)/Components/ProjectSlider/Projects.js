@@ -5,10 +5,12 @@ import { Navigation } from "swiper/modules";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
-import { projects } from "./ProjectList";
+import { projects } from "../projectlist/ProjectList";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { HiArrowLongRight } from "react-icons/hi2";
+import { Roboto_Mono } from "next/font/google";
 import { FaGithub } from "react-icons/fa";
+const roboto = Roboto_Mono({ subsets: ["cyrillic-ext"], weight: ["700"] });
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(projects[0]);
 
@@ -17,11 +19,11 @@ const Projects = () => {
   };
 
   return (
-    <div className="flex flex-col-reverse laptop:flex-row gap-3 p-5 h-fit bg-gradient-to-r from-card/35 to-card/15 rounded-lg border border-card/25">
+    <div className="flex flex-col-reverse laptop:flex-row gap-3 p-5 h-fit bg-gradient-to-r from-card/25 to-card/15 rounded-lg border border-card/15">
       {/* Project Details */}
       <div className="w-full laptop:w-1/2 overflow-hidden relative rounded-lg shadow-lg">
         <div
-          className="text-transparent text-5xl tablet:text-6xl laptop:text-7xl desktop:text-8xl font-extrabold absolute top-0 right-0"
+          className={`${roboto?.className} text-transparent text-5xl tablet:text-6xl laptop:text-7xl desktop:text-8xl font-extrabold absolute top-0 right-0`}
           style={{ WebkitTextStroke: "2px #14cf93" }}
         >
           {activeProject?.num}
@@ -64,11 +66,11 @@ const Projects = () => {
         </div>
         <hr className="w-4/5 border-card my-3 rounded-full" />
         <div className="flex items-center gap-3">
-          <button className="transform -rotate-45 hover:-rotate-3 p-3 border-2 border-primary rounded-full bg-transparent text-primary hover:bg-primary hover:text-black transition duration-500 ease-in-out">
-            <HiArrowLongRight size={30} />
+          <button className="z-10 transform -rotate-45 hover:-rotate-3 p-3 border-2 border-primary rounded-full bg-transparent text-primary hover:bg-primary hover:text-black transition duration-500 ease-in-out">
+            <HiArrowLongRight size={20} />
           </button>
-          <button className="p-3 border-2 border-primary rounded-full bg-transparent text-primary hover:bg-primary hover:text-black transition duration-500 ease-in-out">
-            <FaGithub size={30} />
+          <button className="z-10 p-3 border-2 border-primary rounded-full bg-transparent text-primary hover:bg-primary hover:text-black transition duration-500 ease-in-out">
+            <FaGithub size={20} />
           </button>
         </div>
       </div>
@@ -87,7 +89,7 @@ const Projects = () => {
         >
           {projects.map((project, index) => (
             <SwiperSlide key={index}>
-              <div className="h-[325px] tablet:h-[400px] laptop:h-[500px] overflow-hidden relative rounded group cursor-grab">
+              <div className="h-[325px] tablet:h-[400px] laptop:h-[500px] overflow-hidden relative rounded group">
                 <Image
                   src={project?.image}
                   alt={`Project ${project.num}`}

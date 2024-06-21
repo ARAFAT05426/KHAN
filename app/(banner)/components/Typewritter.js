@@ -59,7 +59,7 @@ const Typewritter = ({ texts, loop = true }) => {
   }, [displayedText, deleting, currentTextIndex, texts.length]);
 
   return (
-    <div className="flex items-center text-[#12B76A] text-3xl md:text-5xl lg:text-6xl font-mono flex-wrap box-border">
+    <div className="flex items-center text-primary text-3xl md:text-5xl lg:text-6xl font-mono flex-wrap box-border">
       <div className=" whitespace-pre-wrap mr-auto items-start">
         <motion.span
           initial="hidden"
@@ -70,7 +70,7 @@ const Typewritter = ({ texts, loop = true }) => {
         >
           <span className="text-gray-200">a</span> {displayedText}
         </motion.span>
-        <span className="inline-block w-1 tablet:w-[5px] h-8 tablet:h-10 laptop:h-14 desktop:h-16 bg-[#12B76A] animate-blink rounded-[1.5px] ml-1 -mb-2 tablet:-mb-3" />
+        <span className="inline-block w-1 tablet:w-[5px] h-8 tablet:h-10 laptop:h-14 desktop:h-16 bg-primary animate-blink rounded-[1.5px] ml-1 -mb-2 tablet:-mb-3" />
       </div>
     </div>
   );

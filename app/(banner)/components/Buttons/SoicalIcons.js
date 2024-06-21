@@ -1,6 +1,6 @@
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { CgPhone } from "react-icons/cg";
-const SocialIcons = () => {
+const SocialIcons = ({ className }) => {
   const icons = [
     { icon: FaFacebook, url: "https://www.flickr.com" },
     { icon: FaLinkedin, url: "https://www.blogger.com" },
@@ -9,7 +9,13 @@ const SocialIcons = () => {
   ];
 
   return (
-    <div className="flex gap-x-5 p-5 justify-center laptop:justify-start w-full">
+    <div
+      className={`${
+        className
+          ? className
+          : "flex gap-x-5 p-5 justify-center laptop:justify-start w-full"
+      }`}
+    >
       {icons.map((item, index) => (
         <div
           key={index}

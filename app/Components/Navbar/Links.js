@@ -1,32 +1,40 @@
-import { FaBlogger } from "react-icons/fa";
-import { FaHome } from "react-icons/fa";
-import { BiSolidUserAccount } from "react-icons/bi";
-import { GiFiles } from "react-icons/gi";
-import { HiAnnotation } from "react-icons/hi";
+// Import necessary icons from react-icons
+import { BiSolidEnvelope, BiSolidUserAccount } from "react-icons/bi";
+import { FaHome, FaStream } from "react-icons/fa";
+import { HiRectangleGroup } from "react-icons/hi2";
+import { PiSwatchesBold } from "react-icons/pi";
+import { TbBriefcaseFilled, TbTools } from "react-icons/tb";
+
 export const links = [
   {
-    title: "Home",
-    path: "/",
-    icon: FaHome,
+    title: "Home",     
+    path: "/",         
+    icon: FaHome,       
   },
   {
-    title: "About",
-    path: "/about",
+    title: "About",    
+    path: "/about",    
     icon: BiSolidUserAccount,
   },
   {
-    title: "Projects",
-    path: "/projects",
-    icon: GiFiles,
+    title: "Services", 
+    path: "/services", 
+    icon: HiRectangleGroup,     
   },
   {
-    title: "Contact",
-    path: "/contact",
-    icon: HiAnnotation,
+    title: "Projects", 
+    path: "/projects", 
+    icon: TbBriefcaseFilled,
   },
   {
-    title: "Blog",
-    path: "/blog",
-    icon: FaBlogger,
+    title: "Contact",  
+    path: "/contact",  
+    icon: BiSolidEnvelope,
+  },
+  {
+    title: "Blog",     
+    path: "/blog",     
+    icon: PiSwatchesBold,
   },
 ];
+

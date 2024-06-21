@@ -4,8 +4,13 @@ import ParticlesComponent from "./Components/ParticlesComponent/ParticlesCompone
 import Navbar from "./Components/Navbar/Navbar";
 import Pagetransition from "./Components/Pagetransition/Pagetransition";
 import StairTransition from "./Components/StairTransition/StairTransition";
+import CustomCursor from "./Components/Common/Cursor/CustomCursor";
+import AnimatedCursor from "react-animated-cursor";
 
-const inter = Source_Code_Pro({ subsets: ["vietnamese"] ,weight:["900", "800", "700", "600", "500", "200"] });
+const inter = Source_Code_Pro({
+  subsets: ["vietnamese"],
+  weight: ["900", "800", "700", "600", "500", "200"],
+});
 
 export const metadata = {
   title: "Khan",
@@ -16,6 +21,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <AnimatedCursor
+          innerSize={10}
+          outerSize={30}
+          color="20, 207, 147"
+          outerAlpha={0.2}
+          innerScale={0.5}
+          outerScale={2}
+          trailingSpeed={5}
+          clickables={[
+            "button",
+            "a",
+            "h1"
+          ]}
+        />
         <Navbar />
         <Pagetransition>{children}</Pagetransition>
         <ParticlesComponent />
