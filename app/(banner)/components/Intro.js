@@ -1,8 +1,9 @@
+import Link from "next/link";
 import Typewritter from "./Typewritter";
 
 const Intro = () => {
   return (
-    <div className="flex flex-col items-center laptop:items-start h-fit p-5 w-fit tablet:w-full">
+    <div className="flex flex-col items-center laptop:items-start h-fit p-5 w-fit tablet:w-full z-[1]">
       <span
         className="text-transparent bg-clip-text text-sm minipad:text-base tablet:text-lg laptop:text-3xl"
         style={{
@@ -13,7 +14,7 @@ const Intro = () => {
         Hello there!
       </span>
       <h1 className="text-3xl tablet:text-4xl laptop:text-5xl desktop:text-6xl text-gray-200 text-center font-bold laptop:text-left mt-2 text-nowrap">
-        I am Arafat Khan
+        I am Arafat <Link href={"/dashboard"}>Khan</Link>
         <br />
         <Typewritter
           texts={["Frontend Developer", "Logo Designer", "University Student"]}

@@ -1,8 +1,8 @@
 export const projects = [
     {
-      num: "03",
+      num: "01",
       category: "frontend",
-      title: "Project 3",
+      title: "Project Static",
       description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
       stack: ["React.js", "Sass", "Webpack"],
       image: "https://i.pinimg.com/originals/63/15/4a/63154aaf35846de2314cc929decd161a.png",
@@ -14,7 +14,7 @@ export const projects = [
       features: "Custom CSS animations, state management with Redux, and optimized build with Webpack."
     },
     {
-      num: "04",
+      num: "02",
       category: "backend",
       title: "Project 4",
       description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
@@ -28,7 +28,7 @@ export const projects = [
       features: "RESTful APIs, database indexing for performance, and Dockerized deployment."
     },
     {
-      num: "05",
+      num: "03",
       category: "mobile",
       title: "Project 5",
       description: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis.",
@@ -42,7 +42,7 @@ export const projects = [
       features: "Push notifications, offline capabilities, and real-time data synchronization."
     },
     {
-      num: "06",
+      num: "04",
       category: "fullstack",
       title: "Project 6",
       description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil.",
@@ -56,7 +56,7 @@ export const projects = [
       features: "Dynamic form validation, secure user authentication, and real-time updates with WebSocket."
     },
     {
-      num: "07",
+      num: "05",
       category: "devops",
       title: "Project 7",
       description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur.",

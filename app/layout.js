@@ -29,11 +29,7 @@ export default function RootLayout({ children }) {
           innerScale={0.5}
           outerScale={2}
           trailingSpeed={5}
-          clickables={[
-            "button",
-            "a",
-            "h1"
-          ]}
+          clickables={["button", "a", "h1", "img"]}
         />
         <Navbar />
         <Pagetransition>{children}</Pagetransition>

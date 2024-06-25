@@ -11,7 +11,7 @@ const Banner = () => {
         {/* Intro and Buttons Section */}
         <div className="flex flex-col gap-y-3 items-center tablet:items-start w-full laptop:w-1/2 text-center laptop:text-left">
           <Intro />
-          <div className="flex gap-x-3 items-center justify-center laptop:justify-start">
+          <div className="flex gap-x-3 items-center justify-center laptop:justify-start ml-4">
             <Cv />
             <HireNow />
           </div>

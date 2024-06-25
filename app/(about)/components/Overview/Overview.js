@@ -1,6 +1,6 @@
+import CountUp from "@/app/Components/Common/CountUp/CountUp";
 import { Roboto_Mono } from "next/font/google";
 const roboto = Roboto_Mono({ subsets: ["cyrillic-ext"], weight: ["700"] });
-
 const Overview = () => {
   const overview = [
     {
@@ -28,12 +28,11 @@ const Overview = () => {
           key={index}
           className="flex flex-col text-center laptop:items-start px-[2px] py-3 relative"
         >
-          <div
+          <CountUp
+            end={item.count}
             className={`${roboto?.className} text-2xl tablet:text-3xl laptop:text-4xl mb-2 text-transparent font-extrabold`}
             style={{ WebkitTextStroke: "2px #14cf93" }}
-          >
-            {item.count}
-          </div>
+          />
           <div
             className={`${
               item?.title?.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
@@ -41,7 +40,6 @@ const Overview = () => {
           >
             {item.title}
           </div>
-          {/* Add a vertical divider except for the last item in the row */}
           {index < overview.length - 1 && (
             <div className="hidden laptop:block absolute top-0 right-0 h-full w-[1px] rounded-full bg-card" />
           )}

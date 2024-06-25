@@ -6,9 +6,12 @@ import { links } from "./Links";
 
 const Navbar = () => {
   const pathname = usePathname();
-  if (pathname === "login") {
-    return <></>;
+
+  // Conditional rendering based on pathname
+  if (pathname.includes("login") || pathname.includes("dashboard")) {
+    return null; // Return null to render nothing
   }
+
   return (
     <nav className="fixed z-40 bottom-5 tablet:bottom-10 laptop:bottom-14 left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-card/50 px-4 tablet:px-6 py-2 gap-x-3 w-fit rounded-full border border-card/75">
       {links.map((link, i) => (

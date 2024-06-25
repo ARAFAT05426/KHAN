@@ -1,6 +1,6 @@
 import Button1 from "@/app/Components/Common/Buttons/Button1";
-import ContactDropdown from "../../../Components/Common/Input/ContactDropdown";
 import ContactInp from "./ContactInp";
+import CustomDropdown from "@/app/Components/Common/Input/CustomDropdown";
 
 const ContactForm = () => {
   return (
@@ -9,14 +9,14 @@ const ContactForm = () => {
         <ContactInp title={"First Name"} name={"firstname"} />
         <ContactInp title={"Last Name"} name={"lastname"} />
         <ContactInp title={"Email"} name={"email"} />
-        <ContactDropdown
+        <CustomDropdown
           title={"Subject"}
           name={"subject"}
           options={["front", "back"]}
         />
         <div className="col-span-2">
           <h1>Message</h1>
-          <textarea className="bg-transparent border-b border-b-card outline-none w-full focus-within:border-b-primary" rows={5}></textarea>
+          <textarea className="bg-transparent border-b border-b-card outline-none w-full focus-within:border-b-primary" rows={6.6}></textarea>
         </div>
         <div className="col-span-2">
         <Button1 title={"Send Message"} subtitle={"Let`s Work Together!"} />

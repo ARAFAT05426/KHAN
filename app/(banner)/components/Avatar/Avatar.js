@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import me from "/public/me.png";
+
 const containerVariants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: { opacity: 1, scale: 1 },
@@ -10,9 +11,9 @@ const containerVariants = {
 
 const Avatar = () => {
   return (
-    <div className="p-4 z-10 flex justify-center items-center">
+    <div className="flex justify-center items-center p-4 z-10">
       <motion.div
-        className="h-[550px] w-[550px] rounded-full overflow-hidden mix-blend-darken"
+        className="h-[300px] tablet:h-[400px] laptop:h-[500px] lg:h-[550px] w-[300px] tablet:w-[400px] laptop:w-[500px] lg:w-[550px] rounded-full overflow-hidden shadow-lg"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -24,7 +25,7 @@ const Avatar = () => {
           priority
           quality={100}
           alt="me"
-          className="object-contain"
+          className="object-cover"
         />
       </motion.div>
     </div>

@@ -3,8 +3,7 @@ import { services } from "./ServicesList";
 
 const MyServices = () => {
   return (
-    <div className="grid grid-cols-1 tablet:grid-cols-2 gap-3 p-3 flex-1 h-[61vh] overflow-auto z-[3]"
-    style={{scrollbarWidth: "none"}}>
+    <div className="grid grid-cols-1 tablet:grid-cols-2 gap-3 p-3 flex-1 h-[61vh] overflow-auto z-[3]">
       {services?.map((item, i) => (
         <div
           key={i}

@@ -1,23 +1,28 @@
 "use client";
-import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import Image from "next/image";
-import "swiper/css";
-import "swiper/css/navigation";
-import { projects } from "../projectlist/ProjectList";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { HiArrowLongRight } from "react-icons/hi2";
+import { useEffect, useState } from "react";
 import { Roboto_Mono } from "next/font/google";
+import { HiArrowLongRight } from "react-icons/hi2";
 import { FaGithub } from "react-icons/fa";
+import { projects } from "../projectlist/ProjectList";
+import ProjectSlider from "./ProjectSlider";
+
 const roboto = Roboto_Mono({ subsets: ["cyrillic-ext"], weight: ["700"] });
+
 const Projects = () => {
-  const [activeProject, setActiveProject] = useState(projects[0]);
-
+  const [myProjects, setProjects] = useState(projects);
+  const [activeProject, setActiveProject] = useState(myProjects[0]);
   const handleSlideChange = (swiper) => {
-    setActiveProject(projects[swiper?.activeIndex]);
+    setActiveProject(myProjects[swiper?.activeIndex]);
   };
-
+  useEffect(() =>{
+    fetchData()
+  }, [])
+  const fetchData = async() =>{
+    const res = await fetch("http://localhost:3000/projects/api", {cache: "no-store"})
+    const data = await res.json()
+    setProjects(data.data)
+    setActiveProject(data.data[0])
+  }
   return (
     <div className="flex flex-col-reverse laptop:flex-row gap-3 p-5 h-fit bg-gradient-to-r from-card/25 to-card/15 rounded-lg border border-card/15">
       {/* Project Details */}
@@ -28,7 +33,7 @@ const Projects = () => {
         >
           {activeProject?.num}
         </div>
-        <div className="text-white mt-4 relative z-10">
+        <div className="text-gray-200 mt-4 relative z-10">
           <div className="flex items-center mb-4">
             <span className="text-xs text-primary">
               {activeProject?.startDate} - {activeProject?.endDate}
@@ -75,54 +80,7 @@ const Projects = () => {
         </div>
       </div>
       {/* Project Images Slider */}
-      <div className="w-full laptop:w-1/2 relative">
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={1}
-          className="h-[325px] tablet:h-[400px] laptop:h-[500px]"
-          onSlideChange={handleSlideChange}
-          modules={[Navigation]}
-          navigation={{
-            nextEl: ".next",
-            prevEl: ".prev",
-          }}
-        >
-          {projects.map((project, index) => (
-            <SwiperSlide key={index}>
-              <div className="h-[325px] tablet:h-[400px] laptop:h-[500px] overflow-hidden relative rounded group">
-                <Image
-                  src={project?.image}
-                  alt={`Project ${project.num}`}
-                  className="rounded transition-transform duration-500 group-hover:scale-105"
-                  layout="fill"
-                  objectFit="cover"
-                />
-                {/* Overlay */}
-                <div
-                  className="absolute inset-0 bg-gradient-to-l from-transparent via-primary/75
-                 to-card opacity-0 group-hover:opacity-75 transition-all duration-700 flex justify-center items-center p-4"
-                  style={{
-                    transitionTimingFunction:
-                      "cubic-bezier(0.215, 0.61, 0.355, 1)",
-                  }}
-                >
-                  <h3 className="text-2xl absolute bottom-0 group-hover:bottom-[47%] tablet:text-3xl font-thin uppercase transition-all duration-500">
-                    {project?.category}
-                  </h3>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="absolute bottom-1 right-1 laptop:-bottom-20 laptop:-right-4 flex gap-3 justify-between laptop:justify-normal z-10">
-          <button className="prev p-2 bg-card/75 rounded duration-300 z-10">
-            <MdKeyboardArrowLeft className="text-primary text-4xl" />
-          </button>
-          <button className="next p-2 bg-card/75 rounded duration-300 z-10">
-            <MdKeyboardArrowRight className="text-primary text-4xl" />
-          </button>
-        </div>
-      </div>
+      <ProjectSlider projects={myProjects} handleSlideChange={handleSlideChange} />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { Roboto_Mono } from "next/font/google";
 import { FaUsers } from "react-icons/fa";
 import { AiOutlineProject, AiFillStar } from "react-icons/ai";
 import { GoCodeReview } from "react-icons/go";
+import CountUp from "@/app/Components/Common/CountUp/CountUp";
 const roboto = Roboto_Mono({ subsets: ["cyrillic-ext"], weight: ["700"] });
 
 const ServiceSide = () => {
@@ -29,22 +30,26 @@ const ServiceSide = () => {
       <div className="grid grid-cols-2 gap-3">
         <div className="bg-card/50 p-3 flex flex-col gap-1 z-[3] items-center rounded-lg">
           <FaUsers className="text-primary" size={35} />
-          <p className="text-3xl font-black text-gray-200">16</p>
+          <CountUp end={16} className={"text-3xl font-black text-gray-200"} />
           <span className="text-xs text-gray-400">Happy Clients</span>
         </div>
         <div className="bg-card/50 p-3 flex flex-col gap-1 z-[3] items-center rounded-lg">
           <AiOutlineProject className="text-primary" size={35} />
-          <p className="text-3xl font-black text-gray-200">16</p>
+          <CountUp end={16} className={"text-3xl font-black text-gray-200"} />
           <span className="text-xs text-gray-400">Completed Projects</span>
         </div>
         <div className="bg-card/50 p-3 flex flex-col gap-1 z-[3] items-center rounded-lg">
           <AiFillStar className="text-primary" size={35} />
-          <p className="text-3xl font-black text-gray-200">93%</p>
+          <div className="text-3xl font-black text-gray-200 flex">
+            <CountUp end={93} className={"text-3xl font-black text-gray-200"} />%
+          </div>
           <span className="text-xs text-gray-400">Positive Reviews</span>
         </div>
         <div className="bg-card/50 p-3 flex flex-col gap-1 z-[3] items-center rounded-lg">
           <GoCodeReview className="text-primary" size={35} />
-          <p className="text-3xl font-black text-gray-200">9k+</p>
+          <div className="text-3xl font-black text-gray-200 flex">
+            <CountUp end={9} className={"text-3xl font-black text-gray-200"} />k+
+          </div>
           <span className="text-xs text-gray-400">Lines of Code</span>
         </div>
       </div>

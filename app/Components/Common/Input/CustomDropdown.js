@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TiArrowSortedDown } from "react-icons/ti";
 
-const CustomDropdown = ({ title, name, options }) => {
+const CustomDropdown = ({ title, options }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
@@ -20,7 +20,7 @@ const CustomDropdown = ({ title, name, options }) => {
       <div className="relative">
         <button
           type="button"
-          className="w-full bg-transparent outline-none border-b border-card focus-within:border-b-primary px-1 py-3 text-left cursor-pointer flex justify-between text-primary"
+          className="w-full bg-transparent outline-none border-b border-card focus-within:border-b-primary px-1 py-3 text-left cursor-pointer flex justify-between text-gray-300"
           onClick={toggleDropdown}
         >
           {selectedOption}
