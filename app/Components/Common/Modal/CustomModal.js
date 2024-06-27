@@ -16,12 +16,12 @@ const CustomModal = ({ isOpen, onClose, children }) => {
           onClick={onClose}
         >
           <motion.div
-            className="bg-card/75 rounded-lg p-3 tablet:p-5 laptop:p-8 w-1/2 mx-auto relative"
+            className="bg-card/75 rounded-lg p-3 tablet:p-5 laptop:p-8 w-4/5 laptop:w-1/2 mx-auto relative"
             initial={{ y: "-50%", opacity: 0 }}
             animate={{ y: "0%", opacity: 1 }}
             exit={{ y: "-50%", opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            onClick={(e) => e.stopPropagation()} // Prevent closing modal on content click
+            onClick={(e) => e.stopPropagation()}
           >
             <button
               className="absolute top-2 right-2 text-primary"

@@ -50,20 +50,19 @@ body {
   pointer-events: none;
   mix-blend-mode: difference; /* Optional: Blend mode for cursor visibility */
 }
-canvas{
+
+canvas {
   /* z-index: -1; */
 }
 ::-webkit-scrollbar {
-  width: 4px; 
-  height: 8px; 
+  width: 4px;
+  height: 8px;
 }
-
 
 ::-webkit-scrollbar-track {
-  background: #111827; 
-  border-radius: 4px; 
+  background: #111827;
+  border-radius: 4px;
 }
-
 
 ::-webkit-scrollbar-thumb {
   background-color: #14cf93;

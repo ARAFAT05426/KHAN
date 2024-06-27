@@ -1,4 +1,4 @@
-import Intro from "../Intro";
+import Intro from "../components/Intro/Intro";
 import Tabs from "../components/TabContainer/TabContainer";
 
 const Page = () => {

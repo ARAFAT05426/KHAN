@@ -4,8 +4,8 @@ import ParticlesComponent from "./Components/ParticlesComponent/ParticlesCompone
 import Navbar from "./Components/Navbar/Navbar";
 import Pagetransition from "./Components/Pagetransition/Pagetransition";
 import StairTransition from "./Components/StairTransition/StairTransition";
-import CustomCursor from "./Components/Common/Cursor/CustomCursor";
 import AnimatedCursor from "react-animated-cursor";
+import { cookies } from "next/headers";
 
 const inter = Source_Code_Pro({
   subsets: ["vietnamese"],

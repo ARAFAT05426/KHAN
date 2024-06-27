@@ -12,7 +12,7 @@ const Pagetransition = ({ children }) => {
         initial={{ opacity: 1 }}
         animate={{
           opacity: 0,
-          transition: { delay: 1, duration: 0.5, ease: "easeInOut" },
+          transition: { delay: 0.7, duration: 0.3, ease: "easeInOut" },
         }}
         exit={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5, ease: "easeInOut" }}

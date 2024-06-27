@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
@@ -22,7 +23,12 @@ const ProjectSlider = ({ handleSlideChange, projects }) => {
       >
         {projects.map((project, index) => (
           <SwiperSlide key={index}>
-            <div className="h-[325px] tablet:h-[400px] laptop:h-[500px] overflow-hidden relative rounded group">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 100 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6, ease: "easeInOut" }}
+              className="h-[325px] tablet:h-[400px] laptop:h-[500px] overflow-hidden relative rounded group z-[1]"
+            >
               <Image
                 src={project?.image}
                 alt={`Project ${project?.num}`}
@@ -31,29 +37,57 @@ const ProjectSlider = ({ handleSlideChange, projects }) => {
                 objectFit="cover"
               />
               {/* Overlay */}
-              <div
-                className="absolute inset-0 bg-gradient-to-l from-transparent via-primary/75 to-card opacity-0 group-hover:opacity-75 transition-all duration-700 flex justify-center items-center p-4"
-                style={{
-                  transitionTimingFunction:
-                    "cubic-bezier(0.215, 0.61, 0.355, 1)",
-                }}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 0.75 }}
+                className="absolute inset-0 bg-gradient-to-l from-transparent via-primary/75 to-card/75 flex justify-center items-center p-4"
               >
-                <h3 className="text-2xl absolute bottom-0 group-hover:bottom-[47%] tablet:text-3xl font-thin uppercase transition-all duration-500">
+                <motion.h3
+                  initial={{ bottom: "-100%" }}
+                  animate={{ bottom: "47%" }}
+                  transition={{ duration: 0.3 }}
+                  className="text-2xl tablet:text-3xl font-thin uppercase pointer-events-auto"
+                >
                   {project?.category}
-                </h3>
-              </div>
-            </div>
+                </motion.h3>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                className="absolute inset-0 bg-gradient-to-l from-transparent via-primary/75 to-card/75 opacity-0 group-hover:opacity-75 transition-all duration-700 flex justify-center items-center p-4 pointer-events-none"
+              >
+                <motion.h3
+                  initial={{ bottom: "-100%" }}
+                  animate={{ bottom: "47%" }}
+                  transition={{ duration: 0.3 }}
+                  className="text-2xl tablet:text-3xl font-thin uppercase pointer-events-auto"
+                >
+                  {project?.category}
+                </motion.h3>
+              </motion.div>
+            </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="absolute bottom-1 right-1 laptop:-bottom-20 laptop:-right-4 flex gap-3 justify-between laptop:justify-normal z-10">
-        <button className="prev p-2 bg-card/75 rounded duration-300 z-10">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="absolute bottom-1 right-1 laptop:-bottom-20 laptop:-right-4 flex gap-3 justify-between laptop:justify-normal z-10"
+      >
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          className="prev p-2 bg-card/75 rounded duration-300 z-10"
+        >
           <MdKeyboardArrowLeft className="text-primary text-4xl" />
-        </button>
-        <button className="next p-2 bg-card/75 rounded duration-300 z-10">
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          className="next p-2 bg-card/75 rounded duration-300 z-10"
+        >
           <MdKeyboardArrowRight className="text-primary text-4xl" />
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
     </div>
   );
 };

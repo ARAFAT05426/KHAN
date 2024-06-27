@@ -1,5 +1,7 @@
+import { delay, motion } from "framer-motion";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { CgPhone } from "react-icons/cg";
+
 const SocialIcons = ({ className }) => {
   const icons = [
     { icon: FaFacebook, url: "https://www.flickr.com" },
@@ -8,28 +10,55 @@ const SocialIcons = ({ className }) => {
     { icon: CgPhone, url: "https://www.vimeo.com" },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 1.2,
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const iconVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       className={`${
         className
           ? className
           : "flex gap-x-5 p-5 justify-center laptop:justify-start w-full"
       }`}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
     >
       {icons.map((item, index) => (
-        <div
+        <motion.a
           key={index}
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg z-10"
+          variants={iconVariants}
+          className="group relative focus:outline-none z-10"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <button className="p-3 border-2 border-primary rounded-full bg-transparent text-primary hover:bg-primary hover:text-black transition duration-500 ease-in-out">
+          <div className="p-3 border-2 border-primary rounded-full bg-transparent text-primary hover:bg-primary hover:text-black transition duration-500 ease-in-out">
             <item.icon size={30} className="group-hover:text-black" />
-          </button>
-        </div>
+          </div>
+        </motion.a>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
