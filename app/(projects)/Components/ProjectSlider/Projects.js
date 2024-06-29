@@ -1,22 +1,18 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Roboto_Mono } from "next/font/google";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { FaGithub } from "react-icons/fa";
 import { projects } from "../projectlist/ProjectList";
 import ProjectSlider from "./ProjectSlider";
 import useProjects from "../useProjects/useProjects";
-
-const roboto = Roboto_Mono({ subsets: ["cyrillic-ext"], weight: ["700"] });
-
 const Projects = () => {
   const [myProjects, setProjects] = useState(projects);
   const [activeProject, setActiveProject] = useState(myProjects[0]);
   const handleSlideChange = (swiper) => {
     setActiveProject(myProjects[swiper?.activeIndex]);
   };
-  const { projects: dbProjects, loading } = useProjects();
+  const { projects: dbProjects } = useProjects();
   useEffect(() => {
     setProjects(dbProjects);
     setActiveProject(dbProjects[0]);

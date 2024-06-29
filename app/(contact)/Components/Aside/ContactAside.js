@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { motion } from "framer-motion";
 import { MdLocationPin, MdPhone, MdEmail } from "react-icons/md";
@@ -46,7 +47,7 @@ const ContactAside = () => {
         >
           let's craft{" "}
           <motion.span
-            className={` text-transparent font-extrabold uppercase`}
+            className={`text-transparent font-extrabold uppercase`}
             style={{ WebkitTextStroke: "1.5px #14cf93" }}
             variants={itemVariants}
           >
@@ -58,7 +59,7 @@ const ContactAside = () => {
           className="text-base text-gray-300 max-w-2xl text-center laptop:text-start"
           variants={itemVariants}
         >
-          Don`t be afraid, just say hello! Feel free to get in touch with me. I
+          Don&apos;t be afraid, just say hello! Feel free to get in touch with me. I
           am always open to discussing new projects, creative ideas, or
           opportunities to be part of your visions.
         </motion.p>
@@ -85,15 +86,6 @@ const ContactAside = () => {
           <MdPhone className="text-primary" size={30} />
           <p className="text-gray-300 text-center laptop:text-start text-wrap">
             +44 077 155 09 09
-          </p>
-        </motion.div>
-        <motion.div
-          className="bg-card/50 p-5 flex flex-col gap-2 items-center rounded-lg z-10"
-          variants={itemVariants}
-        >
-          <MdEmail className="text-primary" size={30} />
-          <p className="text-gray-300 text-center laptop:text-start text-wrap">
-            james@example.com
           </p>
         </motion.div>
         <motion.div

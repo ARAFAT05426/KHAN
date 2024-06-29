@@ -5,7 +5,6 @@ import Navbar from "./Components/Navbar/Navbar";
 import Pagetransition from "./Components/Pagetransition/Pagetransition";
 import StairTransition from "./Components/StairTransition/StairTransition";
 import AnimatedCursor from "react-animated-cursor";
-
 const inter = Source_Code_Pro({
   subsets: ["vietnamese"],
   weight: ["900", "800", "700", "600", "500", "200"],
