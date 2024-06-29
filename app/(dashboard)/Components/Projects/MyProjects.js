@@ -45,7 +45,7 @@ const MyProjects = ({ projects, loading, refetch }) => {
                       {project?.num}
                     </td>
                     <td className="px-4 py-2 border border-gray-800/75 text-center">
-                      <div className="relative h-10 w-12 mx-auto">
+                      <div className="relative h-10 w-12 mx-auto overflow-hidden">
                         <Image
                           src={project?.image}
                           alt={project?.title}

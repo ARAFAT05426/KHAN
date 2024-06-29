@@ -64,7 +64,7 @@ const ImageModal = ({ isOpen, close }) => {
           >
             {img ? (
               <Image
-                className="w-full h-full object-cover rounded-md"
+                className="w-full h-full object-contain rounded-md"
                 src={img}
                 layout="fill"
                 alt="Uploaded Image"

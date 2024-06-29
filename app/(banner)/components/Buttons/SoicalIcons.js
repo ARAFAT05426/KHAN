@@ -1,13 +1,12 @@
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
-import { CgPhone } from "react-icons/cg";
-
+import { FaPhoneVolume } from "react-icons/fa6";
 const SocialIcons = ({ className }) => {
   const icons = [
-    { icon: FaFacebook, url: "https://www.flickr.com" },
-    { icon: FaLinkedin, url: "https://www.blogger.com" },
-    { icon: FaGithub, url: "https://www.vimeo.com" },
-    { icon: CgPhone, url: "https://www.vimeo.com" },
+    { icon: FaFacebook, url: "https://www.facebook.com/Khan05426" },
+    { icon: FaLinkedin, url: "https://www.linkedin.com/in/arafathossennibir-5426-khan/" },
+    { icon: FaGithub, url: "https://github.com/ARAFAT05426" },
+    { icon: FaPhoneVolume, url: "tel:+1234567890" }, // Replace with your phone number
   ];
 
   const containerVariants = {

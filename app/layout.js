@@ -5,7 +5,6 @@ import Navbar from "./Components/Navbar/Navbar";
 import Pagetransition from "./Components/Pagetransition/Pagetransition";
 import StairTransition from "./Components/StairTransition/StairTransition";
 import AnimatedCursor from "react-animated-cursor";
-import { cookies } from "next/headers";
 
 const inter = Source_Code_Pro({
   subsets: ["vietnamese"],
@@ -28,11 +27,13 @@ export default function RootLayout({ children }) {
           outerAlpha={0.2}
           innerScale={0.5}
           outerScale={2}
-          trailingSpeed={5}
+          trailingSpeed={7}
           clickables={["button", "a", "h1", "img"]}
         />
         <Navbar />
-        <Pagetransition>{children}</Pagetransition>
+        <Pagetransition>
+          <main className="pb-16 laptop:pb-0">{children}</main>
+        </Pagetransition>
         <ParticlesComponent />
         <StairTransition />
       </body>
