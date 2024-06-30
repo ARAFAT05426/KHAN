@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { motion } from "framer-motion";
 import { MdLocationPin, MdPhone, MdEmail } from "react-icons/md";
@@ -7,7 +6,6 @@ import { Rubik_Mono_One } from "next/font/google";
 const roboto = Rubik_Mono_One({ subsets: ["latin"], weight: ["400"] });
 
 const ContactAside = () => {
-  // Variants for each section
   const sectionVariants = {
     hidden: { opacity: 0, y: 100 },
     visible: {
@@ -45,7 +43,7 @@ const ContactAside = () => {
           className={`${roboto.className} text-3xl tablet:text-4xl text-center laptop:text-start laptop:text-5xl font-extrabold text-gray-200 leading-tight ${roboto.className}`}
           variants={itemVariants}
         >
-          let's craft{" "}
+          lets craft{" "}
           <motion.span
             className={`text-transparent font-extrabold uppercase`}
             style={{ WebkitTextStroke: "1.5px #14cf93" }}

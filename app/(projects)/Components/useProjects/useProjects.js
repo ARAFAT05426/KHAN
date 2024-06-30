@@ -6,7 +6,7 @@ const useProjects = () => {
 
   const refetch = async () => {
     try {
-      const res = await fetch("http://localhost:3000/projects/api");
+      const res = await fetch("https://khan-delta.vercel.app/projects/api");
       const data = await res.json();
       setProjects(data.data);
       setLoading(false);

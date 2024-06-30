@@ -110,9 +110,6 @@ const ServiceSide = () => {
           <span className="text-xs text-gray-400">Lines of Code</span>
         </motion.div>
       </motion.div>
-      <motion.div variants={itemVariants}>
-        <Button1 title={"Get Started"} subtitle={"What are u waiting for?"} />
-      </motion.div>
     </motion.div>
   );
 };
