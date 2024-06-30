@@ -21,5 +21,5 @@ export const middleware = async (request) => {
 };
 
 export const config = {
-  matcher: ["/dashboard", "/dashboard/api", ],
+  matcher: ["/dashboard", ],
 };
