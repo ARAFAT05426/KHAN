@@ -1,18 +1,8 @@
-import { TbTemplate, TbPencil, TbCode, TbSettings, TbDeviceLaptop, TbLayers, TbChartBar, TbWorld, TbMobile, TbLayersDifference, TbMobiledata } from 'react-icons/tb'; // Correct import path
+import { TbCode, TbSettings, TbDeviceLaptop, TbLayersDifference } from 'react-icons/tb'; // Correct import path
 
 // import { TbTemplate } from "react-icons/tb";
 
 export const services = [
-  {
-    service: TbTemplate,
-    title: "Website Design",
-    description: "Creating visually appealing and user-friendly website designs that align with your brand."
-  },
-  {
-    service: TbPencil,
-    title: "Graphic Design",
-    description: "Crafting engaging graphics and visuals for various media to communicate your message effectively."
-  },
   {
     service: TbCode,
     title: "Web Development",

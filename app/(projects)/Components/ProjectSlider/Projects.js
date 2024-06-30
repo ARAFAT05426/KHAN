@@ -3,20 +3,31 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { HiArrowLongRight } from "react-icons/hi2";
 import { FaGithub } from "react-icons/fa";
-import { projects } from "../projectlist/ProjectList";
+import { staticProjects } from "../staticProjects/staticProjects";
 import ProjectSlider from "./ProjectSlider";
 import useProjects from "../useProjects/useProjects";
+
 const Projects = () => {
-  const [myProjects, setProjects] = useState(projects);
+  const [myProjects, setProjects] = useState(staticProjects);
   const [activeProject, setActiveProject] = useState(myProjects[0]);
+
   const handleSlideChange = (swiper) => {
     setActiveProject(myProjects[swiper?.activeIndex]);
   };
-  const { projects: dbProjects } = useProjects();
+
+  const { projects } = useProjects();
+
   useEffect(() => {
-    setProjects(dbProjects);
-    setActiveProject(dbProjects[0]);
-  }, [dbProjects]);
+    if (projects?.length > 1) {
+      setProjects(projects);
+      setActiveProject(projects[0]);
+    } else {
+      setProjects(staticProjects);
+      setActiveProject(staticProjects[0]);
+    }
+  }, [projects]);
+
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -32,12 +43,8 @@ const Projects = () => {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
+      opacity: 1, y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
     },
   };
 
@@ -48,6 +55,7 @@ const Projects = () => {
       variants={containerVariants}
       className="flex flex-col-reverse laptop:flex-row gap-3 p-5 h-fit bg-gradient-to-r from-card/25 to-card/15 rounded-lg shadow-lg border border-card/15"
     >
+      {/* Project Details Section */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -115,9 +123,7 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="mb-4"
           >
-            <h3 className="text-lg font-semibold text-gray-200">
-              Key Features
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-200">Key Features</h3>
             <motion.p variants={itemVariants} className="text-sm text-gray-400">
               {activeProject?.features}
             </motion.p>
@@ -155,10 +161,8 @@ const Projects = () => {
           </motion.div>
         </div>
       </motion.div>
-      <ProjectSlider
-        projects={myProjects}
-        handleSlideChange={handleSlideChange}
-      />
+      {/* Project Slider */}
+      <ProjectSlider projects={myProjects} handleSlideChange={handleSlideChange} />
     </motion.div>
   );
 };

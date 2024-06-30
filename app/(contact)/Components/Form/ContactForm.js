@@ -1,10 +1,14 @@
 "use client"
+
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import Button1 from '@/app/Components/Common/Buttons/Button1';
 import ContactInp from './ContactInp';
-import CustomDropdown from '@/app/Components/Common/Input/CustomDropdown';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
+  const [errorMessage, setErrorMessage] = useState('');
+
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -15,6 +19,32 @@ const ContactForm = () => {
         ease: 'easeOut',
       },
     },
+  };
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    const field = e.target;
+    const name = field.name.value;
+    const subject = field.subject.value;
+    const email = field.email.value;
+    const message = field.message.value;
+
+    const templatemMessage = {
+      to_name: "Khan",
+      name: name,
+      subject: subject,
+      email: email,
+      message: message
+    };
+
+    try {
+      await emailjs.send('service_rrfzsui', 'template_pbulehr', templatemMessage, 'UCud5jrTTUMHzvDI3');
+      e.target.reset();
+      setErrorMessage('');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setErrorMessage('Failed to send email. Please try again later.');
+    }
   };
 
   return (
@@ -30,29 +60,30 @@ const ContactForm = () => {
             },
           },
         }}
+        onSubmit={sendEmail}
       >
         <motion.div variants={itemVariants}>
-          <ContactInp title={'First Name'} name={'firstname'} />
+          <ContactInp title={'Name'} name={'name'} />
         </motion.div>
         <motion.div variants={itemVariants}>
-          <ContactInp title={'Last Name'} name={'lastname'} />
+          <ContactInp title={'Subject'} name={'subject'} />
         </motion.div>
-        <motion.div variants={itemVariants}>
+        <motion.div variants={itemVariants} className='col-span-2'>
           <ContactInp title={'Email'} name={'email'} />
         </motion.div>
-        <motion.div variants={itemVariants}>
-          <CustomDropdown
-            title={'Subject'}
-            name={'subject'}
-            options={['front', 'back']}
+        <motion.div variants={itemVariants} className="col-span-2">
+          <h1 className='text-primary/75'>Message</h1>
+          <textarea
+            className="bg-transparent border-b border-b-card outline-none w-full focus-within:border-b-primary"
+            rows={6.6}
+            name="message"
           />
         </motion.div>
+      {errorMessage && (
+        <div className="text-red-600 mt-2 text-center text-xs col-span-2">{errorMessage}</div>
+      )}
         <motion.div variants={itemVariants} className="col-span-2">
-          <h1>Message</h1>
-          <textarea className="bg-transparent border-b border-b-card outline-none w-full focus-within:border-b-primary" rows={6.6}></textarea>
-        </motion.div>
-        <motion.div variants={itemVariants} className="col-span-2">
-          <Button1 title={'Send Message'} subtitle={'Let`s Work Together!'} />
+          <Button1 title={'Send Message'} subtitle={'Let`s Go!'} type="submit" />
         </motion.div>
       </motion.form>
     </div>

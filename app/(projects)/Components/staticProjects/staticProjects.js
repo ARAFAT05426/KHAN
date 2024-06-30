@@ -1,4 +1,4 @@
-export const projects = [
+export const staticProjects = [
     {
       num: "01",
       category: "frontend",

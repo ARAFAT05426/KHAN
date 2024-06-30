@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
         />
         <Navbar />
         <Pagetransition>
-          <main className="pb-16 laptop:pb-0">{children}</main>
+          <main className="pb-16 laptop:pb-0 px-5 laptop:px-0">{children}</main>
         </Pagetransition>
         <ParticlesComponent />
         <StairTransition />

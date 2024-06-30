@@ -2,7 +2,7 @@
 import Image from "next/image";
 import useAvatar from "@/lib/Hooks/useAvatar";
 import me from "/public/me.png";
-import "./Avatar.css"; // Import your custom CSS file
+import "./Avatar.css";
 
 const Avatar = () => {
   const { avatar } = useAvatar();

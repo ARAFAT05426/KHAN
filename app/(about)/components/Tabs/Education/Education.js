@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 const roboto = Roboto_Mono({ subsets: ["cyrillic-ext"], weight: ["700"] });
 
 const Education = () => {
-  // Variants for each education item
   const itemVariants = {
     hidden: {
       opacity: 0,
@@ -47,7 +46,7 @@ const Education = () => {
             className={`${roboto.className} text-lg text-center tablet:text-left font-bold text-gray-300`}
             variants={itemVariants}
           >
-            {item.course}
+            {item.course} <span className="text-primary text-xs"> - {item?.mark || "__"}</span>
           </motion.h2>
           <motion.div
             className="flex items-center gap-2 mt-2"

@@ -37,7 +37,7 @@ const Expriences = () => {
       {experienceList?.map((item, i) => (
         <motion.div
           key={i}
-          className="bg-card/50 p-5 flex flex-col gap-y-1 items-center tablet:items-start rounded-lg z-[5] w-full"
+          className="bg-card/50 p-5 flex flex-col gap-y-1 items-center tablet:items-start rounded-lg max-h-40 z-[5] w-full"
           variants={itemVariants}
         >
           <p className="text-primary mt-2">

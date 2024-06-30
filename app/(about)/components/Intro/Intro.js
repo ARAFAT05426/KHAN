@@ -39,9 +39,10 @@ const Intro = () => {
 
   return (
     <motion.div
-      className="flex flex-col gap-y-8 px-5 items-center laptop:items-start"
+      className="flex flex-col gap-y-8 px-5 items-center laptop:items-start relative z-10"
       initial="hidden"
-      animate="visible"s
+      animate="visible"
+      s
       variants={introVariants}
     >
       <motion.h1
@@ -62,9 +63,9 @@ const Intro = () => {
         className="max-w-2xl text-gray-300 text-center laptop:text-left text-base tablet:text-lg laptop:text-xl leading-relaxed"
         variants={childVariants}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ex
-        corrupti dolore rerum dolor id voluptatibus ad mollitia, deleniti in
-        corporis nostrum, sint veniam ut.
+        Discover my passion for Web Devlpment, skills, and commitment to
+        delivering exceptional results. Let&apos;s connect and explore how I can
+        contribute to your success.
       </motion.p>
       <motion.div variants={childVariants}>
         <Overview />

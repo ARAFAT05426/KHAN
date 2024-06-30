@@ -43,7 +43,7 @@ const ContactAside = () => {
           className={`${roboto.className} text-3xl tablet:text-4xl text-center laptop:text-start laptop:text-5xl font-extrabold text-gray-200 leading-tight ${roboto.className}`}
           variants={itemVariants}
         >
-          lets craft{" "}
+          let&apos;s craft{" "}
           <motion.span
             className={`text-transparent font-extrabold uppercase`}
             style={{ WebkitTextStroke: "1.5px #14cf93" }}

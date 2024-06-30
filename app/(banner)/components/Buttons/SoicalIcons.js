@@ -6,7 +6,7 @@ const SocialIcons = ({ className }) => {
     { icon: FaFacebook, url: "https://www.facebook.com/Khan05426" },
     { icon: FaLinkedin, url: "https://www.linkedin.com/in/arafathossennibir-5426-khan/" },
     { icon: FaGithub, url: "https://github.com/ARAFAT05426" },
-    { icon: FaPhoneVolume, url: "tel:+1234567890" }, // Replace with your phone number
+    { icon: FaPhoneVolume, url: "tel: +8801918348342" }
   ];
 
   const containerVariants = {

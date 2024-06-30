@@ -5,7 +5,8 @@ export const education = [
             from: 2019,
             to: 2021
         },
-        institution: "Chunakhali Govt College"
+        institution: "Chunakhali Govt College",
+        mark: 4.89
     },
     {
         course: "Higher Secondary Certificate (H.S.C)",
@@ -13,22 +14,25 @@ export const education = [
             from: 2021,
             to: 2023
         },
-        institution: "Amtali Govt College"
+        institution: "Amtali Govt College",
+        mark: 4.89
     },
     {
-        course: "Bachelor of Science in Computer Science",
+        course: "Bachelor of Arts in English",
         duration: {
             from: 2023,
             to: 2027
         },
-        institution: "National University Bangladesh"
+        institution: "National University Bangladesh",
+        mark: "On Going"
     },
     {
-        course: "Master of Science in Data Science",
+        course: "Complete Web Development Course",
         duration: {
-            from: 2027,
-            to: 2029
+            from: 2023,
+            to: 2024
         },
-        institution: "National University Bangladesh"
+        institution: "Programming Hero",
+        mark: "Completed"
     }
 ];

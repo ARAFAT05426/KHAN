@@ -1,7 +1,7 @@
 const ContactInp = ({ title, name }) => {
   return (
     <div>
-      <h1 className="text-gray-200">{title}</h1>
+      <h1 className="text-primary/75 font-bold">{title}</h1>
       <input
         type="text"
         name={name}

@@ -1,22 +1,25 @@
+import useProjects from "@/app/(projects)/Components/useProjects/useProjects";
 import CountUp from "@/app/Components/Common/CountUp/CountUp";
 import { Roboto_Mono } from "next/font/google";
 const roboto = Roboto_Mono({ subsets: ["cyrillic-ext"], weight: ["700"] });
 const Overview = () => {
+  const { projects } = useProjects();
+  console.log(projects);
   const overview = [
     {
-      count: 3800,
+      count: 1200,
       title: "Hours of Coding",
     },
     {
-      count: 16,
+      count: projects?.length || 12,
       title: "Completed Projects",
     },
     {
-      count: 8,
+      count: 10,
       title: "Technologies Mastered",
     },
     {
-      count: 480,
+      count: 370,
       title: "Github Code Commits",
     },
   ];
@@ -31,7 +34,7 @@ const Overview = () => {
           <CountUp
             end={item.count}
             className={`${roboto?.className} text-2xl tablet:text-3xl laptop:text-4xl mb-2 text-transparent font-extrabold`}
-            style={{ WebkitTextStroke: "2px #14cf93" }}
+            style={{ WebkitTextStroke: "1.5px #14cf93" }}
           />
           <div
             className={`${

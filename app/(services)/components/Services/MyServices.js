@@ -29,7 +29,7 @@ const MyServices = () => {
 
   return (
     <motion.div
-      className="grid grid-cols-1 tablet:grid-cols-2 gap-3 p-1 flex-1 h-[61vh] overflow-auto z-[3]"
+      className="grid grid-cols-1 tablet:grid-cols-2 gap-3 p-1 flex-1 overflow-auto z-[3]"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -37,7 +37,7 @@ const MyServices = () => {
       {services?.map((item, i) => (
         <motion.div
           key={i}
-          className="group relative p-6 bg-card/50 rounded-lg transition-all duration-300"
+          className="group relative p-6 bg-card/50 rounded-lg transition-all duration-300 overflow-hidden h-full"
           variants={itemVariants}
         >
           <motion.div
