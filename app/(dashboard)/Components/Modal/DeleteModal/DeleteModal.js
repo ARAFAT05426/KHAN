@@ -4,7 +4,7 @@ import Button1 from "@/app/Components/Common/Buttons/Button1"; // Assuming you h
 const DeleteModal = ({ isOpen, close, id, refetch }) => {
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/projects/api`, {
+      const response = await fetch(`https://khan-delta.vercel.app/projects/api`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

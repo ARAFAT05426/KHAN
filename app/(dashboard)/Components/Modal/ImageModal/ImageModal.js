@@ -31,7 +31,7 @@ const ImageModal = ({ isOpen, close }) => {
   };
   const handleImageUpload = async (hostedURL) => {
     try {
-      const res = await fetch("http://localhost:3000/dashboard/api", {
+      const res = await fetch("https://khan-delta.vercel.app/dashboard/api", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

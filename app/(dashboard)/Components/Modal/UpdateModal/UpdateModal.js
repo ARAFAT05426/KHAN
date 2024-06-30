@@ -64,7 +64,7 @@ const UpdateModal = ({ isOpen, close, project, refetch }) => {
     };
 
     try {
-      const response = await fetch(`http://localhost:3000/projects/api`, {
+      const response = await fetch(`https://khan-delta.vercel.app/projects/api`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
