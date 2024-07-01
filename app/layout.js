@@ -19,19 +19,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AnimatedCursor
-          innerSize={10}
-          outerSize={30}
-          color="20, 207, 147"
-          outerAlpha={0.2}
-          innerScale={0.5}
-          outerScale={2}
-          trailingSpeed={7}
-          clickables={["button", "a", "h1", "img"]}
-        />
+        <div className="hidden laptop:flex">
+          <AnimatedCursor
+            innerSize={10}
+            outerSize={30}
+            color="20, 207, 147"
+            outerAlpha={0.2}
+            innerScale={0.5}
+            outerScale={2}
+            trailingSpeed={7}
+            clickables={["button", "a", "h1", "img"]}
+          />
+        </div>
         <Navbar />
         <Pagetransition>
-          <main className="pb-16 laptop:pb-0 px-5 laptop:px-0">{children}</main>
+          <main className="pb-10 laptop:pb-0 px-5 laptop:px-0">{children}</main>
         </Pagetransition>
         <ParticlesComponent />
         <StairTransition />

@@ -64,13 +64,16 @@ const UpdateModal = ({ isOpen, close, project, refetch }) => {
     };
 
     try {
-      const response = await fetch(`https://khan-delta.vercel.app/projects/api`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id: project._id, updateData: updatedData }),
-      });
+      const response = await fetch(
+        `https://khan-delta.vercel.app/projects/api`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: project._id, updateData: updatedData }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -103,7 +106,7 @@ const UpdateModal = ({ isOpen, close, project, refetch }) => {
         </h1>
         <form
           onSubmit={handleSubmit}
-          className="grid grid-cols-1 laptop:grid-cols-2 gap-4 sm:gap-6"
+          className="grid grid-cols-2 gap-4"
         >
           <div className="col-span-2">
             <ImageUpload
@@ -111,77 +114,97 @@ const UpdateModal = ({ isOpen, close, project, refetch }) => {
               initialImage={formData.image}
             />
           </div>
-          <ReusableInputField
-            title="Project Number"
-            name="num"
-            value={formData.num}
-            onChange={handleChange}
-            required
-          />
-          <ReusableInputField
-            title="Title"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            required
-          />
-          <ReusableInputField
-            title="Category"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            required
-          />
-          <ReusableInputField
-            title="Description"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            required
-          />
-          <ReusableInputField
-            title="Tech Stack"
-            name="stack"
-            value={formData.stack}
-            onChange={handleChange}
-            required
-          />
-          <ReusableInputField
-            title="Live URL"
-            name="live"
-            value={formData.live}
-            onChange={handleChange}
-          />
-          <ReusableInputField
-            title="GitHub URL"
-            name="github"
-            value={formData.github}
-            onChange={handleChange}
-            required
-          />
-          <ReusableInputField
-            title="Start Date"
-            name="startDate"
-            value={formData.startDate}
-            onChange={handleChange}
-            required
-            type="date"
-          />
-          <ReusableInputField
-            title="End Date"
-            name="endDate"
-            value={formData.endDate}
-            onChange={handleChange}
-            required
-            type="date"
-          />
-          <ReusableInputField
-            title="Challenges"
-            name="challenges"
-            value={formData.challenges}
-            onChange={handleChange}
-            required
-          />
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="Project Number"
+              name="num"
+              value={formData.num}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="Title"
+              name="title"
+              value={formData.title}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="Category"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="Description"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="Tech Stack"
+              name="stack"
+              value={formData.stack}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="Live URL"
+              name="live"
+              value={formData.live}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="GitHub URL"
+              name="github"
+              value={formData.github}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="Start Date"
+              name="startDate"
+              value={formData.startDate}
+              onChange={handleChange}
+              required
+              type="date"
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="End Date"
+              name="endDate"
+              value={formData.endDate}
+              onChange={handleChange}
+              required
+              type="date"
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="Challenges"
+              name="challenges"
+              value={formData.challenges}
+              onChange={handleChange}
+              required
+            />
+          </div>
           <div className="col-span-2">
             <ReusableInputField
               title="Features"
@@ -191,7 +214,7 @@ const UpdateModal = ({ isOpen, close, project, refetch }) => {
               required
             />
           </div>
-          <div className="col-span-1 laptop:col-span-2">
+          <div className="col-span-2">
             <Button1 title={"Submit"} subtitle={"Update"} />
           </div>
         </form>

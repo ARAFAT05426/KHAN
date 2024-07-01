@@ -3,26 +3,17 @@ import { motion } from "framer-motion";
 import { services } from "./ServicesList";
 
 const MyServices = () => {
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 100,
+      y: 50,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.7,
-        ease: "easeOut",
+        duration: 0.6,
+        ease: "easeInOut",
       },
     },
   };
@@ -30,7 +21,13 @@ const MyServices = () => {
   return (
     <motion.div
       className="grid grid-cols-1 tablet:grid-cols-2 gap-3 p-1 flex-1 overflow-auto z-[3]"
-      variants={containerVariants}
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.1,
+          },
+        },
+      }}
       initial="hidden"
       animate="visible"
     >
@@ -45,17 +42,17 @@ const MyServices = () => {
             transition={{ duration: 0.3 }}
           />
 
-          <motion.div className="relative z-10">
-            <div className="text-center mb-6 flex flex-col items-center">
-              <item.service className="text-5xl text-primary group-hover:text-card mb-4 transition-all duration-300 text-center" />
+          <motion.div variants={itemVariants} className="relative z-10">
+            <div className="text-center mb-5 flex flex-col items-center">
+              <item.service className="text-5xl text-primary group-hover:text-card mb-3 transition-all duration-300 text-center" />
               <h3 className="text-xl font-bold text-gray-200 group-hover:text-card transition-all text-center duration-300">
                 {item.title}
               </h3>
             </div>
 
-            <p className="text-xs text-gray-300 group-hover:text-card transition-all duration-300 text-center">
+            <motion.p variants={itemVariants} className="text-xs text-gray-300 group-hover:text-card transition-all duration-300 text-center">
               {item.description}
-            </p>
+            </motion.p>
           </motion.div>
         </motion.div>
       ))}

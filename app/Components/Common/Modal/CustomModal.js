@@ -16,7 +16,7 @@ const CustomModal = ({ isOpen, onClose, children }) => {
           onClick={onClose}
         >
           <motion.div
-            className="bg-card/75 rounded-lg p-3 tablet:p-5 laptop:p-8 w-4/5 laptop:w-1/2 mx-auto relative"
+            className="bg-card/75 rounded-lg p-4 mobile:p-6 tablet:p-8 laptop:p-10 w-11/12 mobile:w-10/12 tablet:w-8/12 laptop:w-1/2 mx-auto relative"
             initial={{ y: "-50%", opacity: 0 }}
             animate={{ y: "0%", opacity: 1 }}
             exit={{ y: "-50%", opacity: 0 }}
@@ -27,7 +27,7 @@ const CustomModal = ({ isOpen, onClose, children }) => {
               className="absolute top-2 right-2 text-primary"
               onClick={onClose}
             >
-              <RiCloseCircleLine size={45} className="p-1" />
+              <RiCloseCircleLine size={35} className="p-1" />
             </button>
             {children}
           </motion.div>

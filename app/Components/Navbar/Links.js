@@ -11,14 +11,14 @@ export const links = [
     icon: FaHome,       
   },
   {
-    title: "About",    
-    path: "/about",    
-    icon: BiSolidUserAccount,
-  },
-  {
     title: "Services", 
     path: "/services", 
     icon: HiRectangleGroup,     
+  },
+  {
+    title: "About",    
+    path: "/about",    
+    icon: BiSolidUserAccount,
   },
   {
     title: "Projects", 

@@ -2,11 +2,10 @@ import { aboutlist } from "./AboutList";
 import { motion } from "framer-motion";
 
 const AboutMe = () => {
-  // Variants for item animation
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 20,
+      y: 100,
     },
     visible: {
       opacity: 1,

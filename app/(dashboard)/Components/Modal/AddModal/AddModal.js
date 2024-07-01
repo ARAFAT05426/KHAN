@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CustomModal from "@/app/Components/Common/Modal/CustomModal";
 import ReusableInputField from "@/app/Components/Common/Input/ReusableInputField";
 import Button1 from "@/app/Components/Common/Buttons/Button1";
@@ -35,13 +35,16 @@ const AddModal = ({ isOpen, close, refetch }) => {
     });
 
     try {
-      const response = await fetch("https://khan-delta.vercel.app/projects/api", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://khan-delta.vercel.app/projects/api",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -57,42 +60,64 @@ const AddModal = ({ isOpen, close, refetch }) => {
     <CustomModal isOpen={isOpen} onClose={handleClose}>
       <div
         style={{ scrollbarWidth: "none" }}
-        className="max-w-5xl mx-auto p-6 tablet:p-10 laptop:p-16 rounded-lg overflow-auto h-[80vh]"
+        className="max-w-full mobile:max-w-xl tablet:max-w-2xl laptop:max-w-3xl mx-auto p-4 mobile:p-6 tablet:p-8 laptop:p-10 rounded-lg overflow-auto h-[80vh]"
       >
-        <h1 className="text-xl laptop:text-2xl font-extrabold text-center mb-4 text-gray-200">
+        <h1 className="text-lg mobile:text-xl laptop:text-2xl font-extrabold text-center mb-4 text-gray-200">
           Add New Project
         </h1>
         <form
           onSubmit={handleSubmit}
-          className="grid grid-cols-1 laptop:grid-cols-2 gap-4 sm:gap-6"
+          className="grid grid-cols-2 gap-4"
         >
           <div className="col-span-2">
             <ImageUpload onImageChange={setImageFile} />
           </div>
-          <ReusableInputField title="Project Number" name="num" required />
-          <ReusableInputField title="Title" name="title" required />
-          <ReusableInputField title="Category" name="category" required />
-          <ReusableInputField title="Description" name="description" required />
-          <ReusableInputField title="Tech Stack" name="stack" required />
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField title="Project Number" name="num" required />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField title="Title" name="title" required />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField title="Category" name="category" required />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="Description"
+              name="description"
+              required
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField title="Tech Stack (,)" name="stack" required />
+          </div>
           <ReusableInputField title="Live URL" name="live" />
-          <ReusableInputField title="GitHub URL" name="github" required />
-          <ReusableInputField
-            title="Start Date"
-            name="startDate"
-            required
-            type="date"
-          />
-          <ReusableInputField
-            title="End Date"
-            name="endDate"
-            required
-            type="date"
-          />
-          <ReusableInputField title="Challenges" name="challenges" required />
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField title="GitHub URL" name="github" required />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="Start Date"
+              name="startDate"
+              required
+              type="date"
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField
+              title="End Date"
+              name="endDate"
+              required
+              type="date"
+            />
+          </div>
+          <div className="col-span-2 laptop:col-span-1">
+            <ReusableInputField title="Challenges" name="challenges" required />
+          </div>
           <div className="col-span-2">
             <ReusableInputField title="Features" name="features" required />
           </div>
-          <div className="col-span-1 laptop:col-span-2">
+          <div className="col-span-2">
             <Button1 title={"Submit"} subtitle={"Add"} />
           </div>
         </form>

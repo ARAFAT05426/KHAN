@@ -1,13 +1,15 @@
-"use client"
-
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import Button1 from '@/app/Components/Common/Buttons/Button1';
-import ContactInp from './ContactInp';
-import emailjs from '@emailjs/browser';
+"use client";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import Button1 from "@/app/Components/Common/Buttons/Button1";
+import ContactInp from "./ContactInp";
+import emailjs from "@emailjs/browser";
+import CustomModal from "@/app/Components/Common/Modal/CustomModal";
 
 const ContactForm = () => {
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState("");
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -16,7 +18,7 @@ const ContactForm = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
   };
@@ -34,18 +36,27 @@ const ContactForm = () => {
       name: name,
       subject: subject,
       email: email,
-      message: message
+      message: message,
     };
 
     try {
-      await emailjs.send('service_rrfzsui', 'template_pbulehr', templatemMessage, 'UCud5jrTTUMHzvDI3');
+      await emailjs.send(
+        "service_rrfzsui",
+        "template_pbulehr",
+        templatemMessage,
+        "UCud5jrTTUMHzvDI3"
+      );
       e.target.reset();
-      setErrorMessage('');
+      setErrorMessage("");
+      setModalContent("Your message has been sent successfully!");
+      setModalOpen(true);
     } catch (error) {
-      console.error('Error sending email:', error);
-      setErrorMessage('Failed to send email. Please try again later.');
+      console.error("Error sending email:", error);
+      setErrorMessage("Failed to send email. Please try again later.");
     }
   };
+
+  const closeModal = () => setModalOpen(false);
 
   return (
     <div className="z-10 flex-1 p-3">
@@ -63,29 +74,41 @@ const ContactForm = () => {
         onSubmit={sendEmail}
       >
         <motion.div variants={itemVariants}>
-          <ContactInp title={'Name'} name={'name'} />
+          <ContactInp title={"Name"} name={"name"} />
         </motion.div>
         <motion.div variants={itemVariants}>
-          <ContactInp title={'Subject'} name={'subject'} />
-        </motion.div>
-        <motion.div variants={itemVariants} className='col-span-2'>
-          <ContactInp title={'Email'} name={'email'} />
+          <ContactInp title={"Subject"} name={"subject"} />
         </motion.div>
         <motion.div variants={itemVariants} className="col-span-2">
-          <h1 className='text-primary/75'>Message</h1>
+          <ContactInp title={"Email"} name={"email"} />
+        </motion.div>
+        <motion.div variants={itemVariants} className="col-span-2">
+          <h1 className="text-primary/75">Message</h1>
           <textarea
             className="bg-transparent border-b border-b-card outline-none w-full focus-within:border-b-primary"
-            rows={6.6}
+            rows={5}
             name="message"
           />
         </motion.div>
-      {errorMessage && (
-        <div className="text-red-600 mt-2 text-center text-xs col-span-2">{errorMessage}</div>
-      )}
+        {errorMessage && (
+          <div className="text-red-600 mt-2 text-center text-xs col-span-2">
+            {errorMessage}
+          </div>
+        )}
         <motion.div variants={itemVariants} className="col-span-2">
-          <Button1 title={'Send Message'} subtitle={'Let`s Go!'} type="submit" />
+          <Button1
+            title={"Send Message"}
+            subtitle={"Let`s Go!"}
+            type="submit"
+          />
         </motion.div>
       </motion.form>
+      <CustomModal isOpen={isModalOpen} onClose={closeModal}>
+        <div className="text-center p-5">
+          <h2 className="text-xl font-bold text-primary mb-3">Success!</h2>
+          <p className="text-gray-300">{modalContent}</p>
+        </div>
+      </CustomModal>
     </div>
   );
 };
