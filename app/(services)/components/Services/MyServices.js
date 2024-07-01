@@ -6,13 +6,13 @@ const MyServices = () => {
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 50,
+      y: 30,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.5,
         ease: "easeInOut",
       },
     },
@@ -20,7 +20,7 @@ const MyServices = () => {
 
   return (
     <motion.div
-      className="grid grid-cols-1 tablet:grid-cols-2 gap-3 p-1 flex-1 overflow-auto z-[3]"
+      className="grid grid-cols-1 tablet:grid-cols-2 gap-3 p-1 flex-1 overflow-auto z-[3] transition-all"
       variants={{
         visible: {
           transition: {
@@ -38,8 +38,7 @@ const MyServices = () => {
           variants={itemVariants}
         >
           <motion.div
-            className="absolute inset-0 bg-primary/75 opacity-0 group-hover:opacity-100 rounded-lg"
-            transition={{ duration: 0.3 }}
+            className="absolute inset-0 bg-primary/75 opacity-0 group-hover:opacity-100 rounded-lg duration-300"
           />
 
           <motion.div variants={itemVariants} className="relative z-10">
