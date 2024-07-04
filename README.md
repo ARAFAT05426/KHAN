@@ -6,7 +6,7 @@
 
 ### 🌐 **Live Site**
 
-Explore the live site: [**Khan Portfolio Live**](https://khan-delta.vercel.app)
+Explore the live site: [**Khan Portfolio Live**](https://khan-delta.vercel.app/)
 
 ### ✨ **Key Features**
 

@@ -43,7 +43,8 @@ const Projects = () => {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
-      opacity: 1, y: 0,
+      opacity: 1,
+      y: 0,
       transition: { duration: 0.5, ease: "easeOut" },
     },
   };
@@ -123,7 +124,9 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="mb-4"
           >
-            <h3 className="text-lg font-semibold text-gray-200">Key Features</h3>
+            <h3 className="text-lg font-semibold text-gray-200">
+              Key Features
+            </h3>
             <motion.p variants={itemVariants} className="text-sm text-gray-400">
               {activeProject?.features}
             </motion.p>
@@ -146,23 +149,28 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: 1 }}
             className="flex items-center gap-3"
           >
-            <motion.button
-              whileHover={{ rotate: -3 }}
-              className="transform -rotate-45 p-3 border-2 border-primary rounded-full bg-transparent text-primary hover:bg-primary hover:text-black transition duration-500 ease-in-out"
+            <motion.a
+              href={activeProject.live}
+              target="_blank"
+              className="transform -rotate-45 hover:rotate-0 p-3 border-2 border-primary rounded-full bg-transparent text-primary hover:bg-primary hover:text-black transition duration-500 ease-in-out"
             >
               <HiArrowLongRight size={20} />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
+            </motion.a>
+            <motion.a
+              href={activeProject.github}
+              target="_blank"
               className="p-3 border-2 border-primary rounded-full bg-transparent text-primary hover:bg-primary hover:text-black transition duration-500 ease-in-out"
             >
               <FaGithub size={20} />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </motion.div>
       {/* Project Slider */}
-      <ProjectSlider projects={myProjects} handleSlideChange={handleSlideChange} />
+      <ProjectSlider
+        projects={myProjects}
+        handleSlideChange={handleSlideChange}
+      />
     </motion.div>
   );
 };

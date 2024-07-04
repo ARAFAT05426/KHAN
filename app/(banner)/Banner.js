@@ -56,7 +56,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="container mx-auto h-full tablet:h-screen flex flex-col items-center justify-center p-4">
+    <section className="container mx-auto h-full tablet:h-[calc(100vh-36px)] flex flex-col items-center justify-center p-4">
       <div className="flex flex-col-reverse laptop:flex-row items-center justify-between w-full gap-y-6">
         {/* Intro and Buttons Section */}
         <motion.div

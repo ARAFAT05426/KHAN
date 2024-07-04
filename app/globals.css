@@ -20,6 +20,7 @@ body {
   max-width: 1920px;
   margin: 0 auto;
   color: rgb(var(--foreground-rgb));
+  scroll-behavior: smooth;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -50,10 +51,6 @@ body {
   pointer-events: none;
   mix-blend-mode: difference; /* Optional: Blend mode for cursor visibility */
 }
-
-canvas {
-  /* z-index: -1; */
-}
 ::-webkit-scrollbar {
   width: 4px;
   height: 8px;
@@ -67,4 +64,8 @@ canvas {
 ::-webkit-scrollbar-thumb {
   background-color: #14cf93;
   border-radius: 4px;
+}
+
+footer canvas{
+  z-index: -1;
 }

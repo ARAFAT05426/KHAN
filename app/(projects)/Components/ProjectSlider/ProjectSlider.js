@@ -32,9 +32,8 @@ const ProjectSlider = ({ handleSlideChange, projects }) => {
               <Image
                 src={project?.image}
                 alt={`Project ${project?.num}`}
-                className="rounded transition-transform duration-500 group-hover:scale-105"
+                className="rounded object-fill transition-transform duration-500 group-hover:scale-105"
                 layout="fill"
-                objectFit="cover"
               />
               {/* Overlay */}
               <motion.div

@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Pagetransition from "./Components/Pagetransition/Pagetransition";
 import StairTransition from "./Components/StairTransition/StairTransition";
 import AnimatedCursor from "react-animated-cursor";
+import Footer from "./Components/Footer/Footer";
 const inter = Source_Code_Pro({
   subsets: ["vietnamese"],
   weight: ["900", "800", "700", "600", "500", "200"],
@@ -31,9 +32,14 @@ export default function RootLayout({ children }) {
             clickables={["button", "a", "h1", "img"]}
           />
         </div>
-        <Navbar />
         <Pagetransition>
-          <main className="pb-10 laptop:pb-0 px-5 laptop:px-0">{children}</main>
+          <Navbar />
+          <main className="pt-14 tablet:pt-10 laptop:pt-0 px-5 laptop:px-0 h-full laptop:h-screen">
+            {children}
+          </main>
+          <div className="z-10">
+            <Footer />
+          </div>
         </Pagetransition>
         <ParticlesComponent />
         <StairTransition />

@@ -31,7 +31,7 @@ const Tabs = () => {
           <motion.button
             key={index}
             onClick={() => handleTabClick(index)}
-            className={`transition-all duration-500 ease-in-out w-full px-4 py-2 text-xs laptop:text-sm z-10 font-bold rounded ${
+            className={`transition-all duration-500 ease-in-out w-full px-4 py-2 text-xs laptop:text-sm z-[3] font-bold rounded ${
               activeTab === index
                 ? "bg-primary text-black hover:bg-primary"
                 : "bg-card/75 text-primary hover:bg-primary/85 hover:text-black"

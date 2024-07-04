@@ -1,5 +1,5 @@
 import { TiHtml5 } from "react-icons/ti";
-import { DiCss3, DiJavascript1, DiReact, DiNodejsSmall, DiMongodb, DiSass } from "react-icons/di";
+import { DiCss3, DiJavascript1, DiReact, DiNodejsSmall, DiMongodb } from "react-icons/di";
 import { SiTailwindcss, SiBootstrap, SiExpress, SiFirebase, SiGithub, SiNextdotjs, SiFigma, SiTypescript, SiJsonwebtokens } from "react-icons/si";
 import { FaNpm } from "react-icons/fa6";
 export const skills = [
@@ -15,7 +15,6 @@ export const skills = [
   { name: "Firebase", icon: SiFirebase },
   { name: "GitHub", icon: SiGithub },
   { name: "Next.js", icon: SiNextdotjs },
-  { name: "Sass", icon: DiSass },
   { name: "NPM", icon: FaNpm },
   { name: "Figma", icon: SiFigma },
   { name: "TypeScript", icon: SiTypescript },
