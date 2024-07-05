@@ -54,7 +54,7 @@ const Projects = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="flex flex-col-reverse laptop:flex-row gap-3 p-5 h-fit bg-gradient-to-r from-card/25 to-card/15 rounded-lg shadow-lg border border-card/15"
+      className="flex flex-col-reverse laptop:flex-row gap-3 p-5 h-fit bg-gradient-to-r from-card/25 to-card/15 rounded-lg shadow-lg border border-card/15 mb-5"
     >
       {/* Project Details Section */}
       <motion.div
