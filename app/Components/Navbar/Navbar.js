@@ -9,7 +9,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bg-card/75 top-1 laptop:top-5 left-1/2 transform -translate-x-1/2 flex items-center justify-center px-4 laptop:px-6 py-2 gap-x-3 w-fit rounded-full border border-primary/25 z-50">
+    <nav className="fixed bg-card/75 bottom-2 laptop:bottom-5 left-1/2 transform -translate-x-1/2 flex items-center justify-center px-4 laptop:px-6 py-2 gap-x-3 w-fit rounded-full border border-primary/25 z-50">
       {links.map((link, i) => (
         <Tooltip key={i} content={link.title}>
           <Link href={link.path}>
